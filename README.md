@@ -1,6 +1,6 @@
-## <label style="color: #2dde98">jQuery</label>
+## jQuery
 
-#### 环境部署
+### 环境部署
 
 - 首先 jQuery是我们编写代码时最基本的依赖包
 
