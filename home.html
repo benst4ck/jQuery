@@ -3,7 +3,16 @@
 <head>
   <meta charset="utf-8">
   <title>jQuery</title>
-  
+  <style type="text/css">
+  	.rush {
+  		color: #009bff;
+  		font-weight: bold;
+  	}
+  	.light {
+  		color: #33cc99;
+  		font-size: 22px;
+  	}
+  </style>
 </head>
 <body>
 	<div id="div1">hello from div1</div>
@@ -13,8 +22,8 @@
 	<div>
 		<p style="height: 25px;">peach <span class="fruit">27</span></p>
 		<span>one</span>
-		<span>two</span>
-		<span>three</span>
+		<span id="two">two</span>
+		<span id="three">three</span>
 	</div>
 
 	<p class="node">important Node</p>
@@ -42,6 +51,9 @@
     <li>list item 5</li>
 	</ul>
 
+	<input type="checkbox" name="newsletter" value="foo" />
+	<input type="checkbox" id="selected" name="newsletter" value="bar" />
+	<input type="checkbox" name="accept" value="baz" />
 
 
 

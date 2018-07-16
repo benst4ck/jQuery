@@ -59,3 +59,22 @@ $("p ~ span").append("<b>hi!</b>")
 
 // 将id为lst1中的第一个后代li元素追加到id为lst2中的最后一个后代li元素中
 $("#lst1 li:first").appendTo("#lst2 li:last")
+
+// 首先找到ul元素 然后在ul后代元素中匹配li元素 并且这个li元素得是它父元素的第一个子元素
+// :first只匹配一个 一旦匹配到一个满足条件的 就停止匹配了 而:first-child会匹配所有满足条件的元素 相当于nth-child(1)
+// 为匹配到的元素添加一个'rush'类
+$("ul li:first-child").addClass("rush")
+// 可以通过 removeClass方法来删除匹配元素的指定类 不给参数时删除所有类
+
+// 复合属性选择器
+// 匹配具有id属性 同时具有name属性 并且其属性值为'newsletter'的input元素
+// 通过attr方法 获取或设置属性 通过removeAttr方法从每一个匹配的元素中删除属性
+$("input[id][name='newsletter']").attr("checked", true);
+
+// click方法在每一个匹配元素的click事件中绑定的处理函数
+var count = 0;
+$("#two").click(function(){
+	console.log(count);
+	// 当count的值除以3 余数为0时 toggleClass方法的第二个参数值为true 这时为匹配的元素添加light类 值为false时则删除light类
+  $(this).toggleClass("light", count++ % 3 == 0);  // 这里的this指的就是外层匹配到的元素
+});
