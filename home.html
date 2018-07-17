@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <title>jQuery</title>
   <style type="text/css">
+  	p {
+  		width: 300px;
+  		border-radius: 5px;
+  	}
   	.rush {
   		color: #009bff;
   		font-weight: bold;
@@ -12,6 +16,30 @@
   		color: #33cc99;
   		font-size: 22px;
   	}
+  	.hover {
+  		color: #ff00bf;
+  	}
+  	.block1 {
+  		color: #ffcc00;
+  		height: 100px;
+  		width: 150px;
+  		margin-left: 150px;
+  		padding: 5px;
+  		background-color: #576396;
+  	}
+  	 #block2 {
+  	 	font-size: 20px;
+  	 	font-weight: bold;
+  		color: #008bcf;
+  		height: 100px;
+  		width: 150px;
+  		margin-left: 150px;
+  		margin-top: 10px; 
+  		padding: 5px;
+  		background-color: #99cc33;
+  	}
+
+
   </style>
 </head>
 <body>
@@ -55,7 +83,12 @@
 	<input type="checkbox" id="selected" name="newsletter" value="bar" />
 	<input type="checkbox" name="accept" value="baz" />
 
+	<div id="block1"></div>
 
+	<div id="block2">
+		<span id="width"> px</span></br>
+		<span id="height"> px</span>
+	</div>	
 
 
 	<script src="./dist/bundle.js"></script>

@@ -71,10 +71,55 @@ $("ul li:first-child").addClass("rush")
 // 通过attr方法 获取或设置属性 通过removeAttr方法从每一个匹配的元素中删除属性
 $("input[id][name='newsletter']").attr("checked", true);
 
+// 当元素失去焦点时触发blur事件
+$("input[name='name']").blur(function(){
+	$("#block1").hide(500)  // hide方法 隐藏匹配的显示元素
+})
+
+// 当元素获得焦点时触发focus事件
+$("input[name='name']").focus(function(){
+	$("#block1").addClass("block1").show(1000)  // show方法 显示匹配的隐藏元素
+})
+
+// 当元素的值发生改变时 会发生change事件 
+$("input[name='name']").change(function(){
+	$("#block1").text($(this).val())
+})
 // click方法在每一个匹配元素的click事件中绑定的处理函数
 var count = 0;
 $("#two").click(function(){
 	console.log(count);
 	// 当count的值除以3 余数为0时 toggleClass方法的第二个参数值为true 这时为匹配的元素添加light类 值为false时则删除light类
   $(this).toggleClass("light", count++ % 3 == 0);  // 这里的this指的就是外层匹配到的元素
+});
+
+// hover方法的第一个参数为鼠标移动到匹配元素上时触发的函数 第二个参数为鼠标离开匹配元素时触发的函数
+$("#three").hover(
+  function () {
+    $(this).addClass("hover");
+  },
+  function () {
+    $(this).removeClass("hover");
+  }
+)
+
+// 当键盘被按下时 发生keydown事件和keypress事件
+$(window).keypress(function(event){  
+  switch(event.keyCode) {
+		case 32:
+			alert("hit Space");
+			break;  // break用来阻止代码自动向下一个case运行
+		case 13:
+			alert("hit Enter");
+			break;
+		case 27:
+			alert("hit ESC")
+    // 常用keyCode： 空格 32   Enter 13   ESC 27
+  }
+});
+
+// 当调整浏览器窗口的大小时 发生resize事件
+$(window).resize(function(){
+  $("#block2 #height").text(window.innerHeight + " px");
+  $("#block2 #width").text(window.innerWidth + " px")
 });
